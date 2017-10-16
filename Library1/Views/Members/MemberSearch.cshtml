@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Library1.Models.Member>
+
+
+    <div id="searchmembers">
+        <div>
+            @foreach (var item in Model)
+            {
+                <p>@item.Name</p>
+                <p>@Html.ActionLink("View Member Details", "Details", new { id = item.MemberId })</p>
+                <p>@Html.ActionLink("Edit Member", "Edit", new { id = item.MemberId }) </p>
+            }
+        </div>
+    </div>
+
+
+
+

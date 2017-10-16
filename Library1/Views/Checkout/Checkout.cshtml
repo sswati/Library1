@@ -1,0 +1,104 @@
+﻿@model Library1.Models.CheckoutVM
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+
+
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div class="pull-right">
+    <a href="@Url.Action("Index", "Home")">
+        <i class="fa fa-home large"></i>
+    </a>
+</div>
+
+
+
+@using (Html.BeginForm("CheckoutResult", "Checkout", FormMethod.Post))
+
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="panel panel-heading">
+
+
+
+            <h1 class="col-md-5; text-center">
+                Checkout A Book
+            </h1>
+        </div>
+    </div>
+
+            <br />
+
+            <div class="panel panel-body">
+                <div class="CheckoutForm">
+                    <div class="form-group">
+
+                        <br />
+
+
+
+                        <label class="control-label col-sm-4 ">Member Name:</label>
+                        <div class="col-md-5">
+
+                            @Html.DropDownListFor(model => model.MemberName, new SelectList(Model.Member, "Value", "Text"), new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 ">Book Title:</label>
+
+                        <div class="col-md-5">
+                            @Html.DropDownListFor(model => model.BookTitle, new SelectList(Model.Book, "Value", "Text"), new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 "> Check Out Date:</label>
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(model => model.CheckoutDate, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 ">Return Date:</label>
+
+                        <div class="col-md-5">
+
+                            @Html.TextBoxFor(model => model.ReturnDate, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div class="form-group">
+                        <div class="col-sm-12 pull-right">
+
+                            <input type="submit" value="Checkout Book" class="btn btn-primary btn-md" />
+
+                        </div>
+                    </div>
+
+                    <br />
+
+                </div>
+            </div>
+}
+
+
+
+

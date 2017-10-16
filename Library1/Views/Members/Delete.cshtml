@@ -1,0 +1,52 @@
+﻿@model Library1.Models.Member
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1 class="panel page-header">Are you sure you<br /> want to delete @Model.Name's <br />details?</h1>
+<div>
+    <div class="panel panel-body">
+
+        <div class="col-sm-8 pull-right">
+            <p>
+                @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+            </p>
+
+
+
+            <p>
+                @Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)
+            </p>
+
+
+
+            <p>
+                Post Code: @Html.DisplayFor(model => model.PostCode)
+            </p>
+
+            <div></div>
+
+        </div>
+    </div>
+
+
+
+   
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color panel panel-body">
+            <input type="submit" value="Delete" class="btn btn-primary btn-lg" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+
+    
+
+  
+</div>
+
+
+

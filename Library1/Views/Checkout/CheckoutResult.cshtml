@@ -1,0 +1,22 @@
+﻿@model Library1.Models.CheckoutVM
+
+@{
+    ViewBag.Title = "CheckoutResult";
+}
+
+
+
+<body>
+    <div class="alert alert-success text-center" role="alert">
+
+
+        <div>You have succesfully checked out!</div>
+        <div class="glyphicon glyphicon-ok"></div>
+        <br />
+
+        @Html.ActionLink("Return to Home Page", "Index", "Home", new { @class = "alert-link" }, null)
+    </div>
+</body>
+
+
+

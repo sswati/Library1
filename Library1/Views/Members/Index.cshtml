@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Library1.Models.Member>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<<div class="panel panel-heading">
+
+    <div class="pull-right">
+        <a href="@Url.Action("Index", "Home")">
+            <i class="fa fa-home large"></i>
+        </a>
+    </div>
+    <h1>Members</h1>
+
+
+
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Search Member</div>
+
+    <div class="panel-body">
+        @using (Ajax.BeginForm("MemberSearch", "Members",
+                new AjaxOptions
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET",
+                    OnFailure = "searchFailed",
+                    LoadingElementId = "ajax-loader",
+                    UpdateTargetId = "searchmembers"
+                }))
+        {
+            <input type="text" name="qm"
+                   data-autocomplete-source="@Url.Action("QuickSearch","Members")" />
+
+
+                <input type="submit" value="search" />
+                <img id="ajax-loader"
+                     src="@Url.Content("~/Images/ajax-loader.gif")"
+                
+            style = "display:none" />
+        }
+
+        <div id="searchmembers"></div>
+    </div>
+</div>
+
+<div class="panel panel-body">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <thead class="indexb">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    Post Code
+                </th>
+                <th>
+                    Telephone Number
+                </th>
+                <th></th>
+
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelNo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MemberId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MemberId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MemberId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+@section scripts{
+
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/App/Member.js"></script>
+
+
+
+}
+

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Library1.Models.Book>
+
+<div id="searchbooks">
+    <div>
+      @foreach (var item in Model)
+      {
+        <p>@item.Name</p>
+        <p>@Html.ActionLink("View Book Details", "Details", new { id = item.ISBN })</p>
+        <p>@Html.ActionLink("Edit Book", "Edit", new { id = item.ISBN }) </p>
+      }
+    </div>
+</div>
+ 

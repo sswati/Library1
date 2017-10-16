@@ -1,0 +1,19 @@
+﻿@model Library1.Models.Book
+
+@{
+    ViewBag.Title = "DeleteBook";
+}
+
+<div class="panel panel-body">
+    
+        <h2 class="pull-left">
+            Sorry this book is out on loan and cannot be deleted
+        </h2>
+            <div class="pull-right">
+                <a href="@Url.Action("Index", "Home")">
+                    <i class="fa fa-home large"></i>
+                </a>
+            </div>
+       
+
+</div>

@@ -1,0 +1,17 @@
+﻿@model Library1.Models.Loan
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ReturnBook";
+}
+
+<div class="alert alert-success text-center" role="alert">
+
+
+    <div>You have succesfully returned the book!</div>
+    <div class="glyphicon glyphicon-ok"></div>
+    <br />
+
+    @Html.ActionLink("Return to Home Page", "Index", "Home", new { @class = "alert-link" }, null)
+</div>
+

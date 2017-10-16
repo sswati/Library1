@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Library1.Models.Loan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="pull-right">
+    <a href="@Url.Action("Index", "Home")">
+        <i class="fa fa-home large"></i>
+    </a>
+</div>
+<div class="panel panel-heading">
+
+    <h1>Book Return</h1>
+
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Please enter the Title of the book</div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("LoanSearch", "BookReturn",
+                   new AjaxOptions
+                   {
+                       InsertionMode = InsertionMode.Replace,
+                       HttpMethod = "GET",
+                       OnFailure = "searchFailed",
+                       LoadingElementId = "ajax-loader",
+                       UpdateTargetId = "searchresult",
+                   }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+            <img id="ajax-loader"
+                 src="@Url.Content("~/Images/ajax-loader.gif")"
+            
+            style = "display:none" />
+        }
+        <div id="searchresult"></div>
+
+        <div id="searchFailed">
+            @ViewBag.Error
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/App/Book.js"></script>
+
+}
+

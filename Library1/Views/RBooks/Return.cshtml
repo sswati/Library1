@@ -1,0 +1,33 @@
+﻿@model Library1.Models.Loan
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Return";
+}
+
+
+<div class="panel panel-heading">
+    <h1>Return Book</h1>
+</div>
+@using (Html.BeginForm("ReturnBook", "RBooks", new { Id = Model.LoanId }, FormMethod.Post, null))
+
+{
+
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.LoanId)
+
+    <div class="panel panel-body">
+        <h3>Are you sure you would like to return this book?</h3>
+
+        <br />
+
+        <div class="returnbutton">
+
+            <input type="submit" value="Return Book" class="btn btn-primary" />
+           | @Html.ActionLink("Back to List", "Index","Books")
+        </div>
+
+        
+    </div>
+}

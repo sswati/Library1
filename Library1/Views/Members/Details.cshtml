@@ -1,0 +1,102 @@
+﻿@model Library1.Models.Member
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h1 class="panel panel-heading">@Model.Name</h1>
+
+<div>
+
+    <hr />
+
+    <div class="panel panel-body">
+        <div class="col-sm-10 pull-right">
+            <div class="col-md-5">
+                <br />
+
+                <dl class="dl-horizontal">
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+
+                    <dt>
+                        Post Code:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PostCode)
+                    </dd>
+
+                    <dt>
+                        Telephone Number:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TelNo)
+                    </dd>
+
+
+
+
+                </dl>
+
+                @if (Model.Loans.Count > 0)
+                {
+
+
+                    <dl class="dl-horizontal">
+
+                        <dt>Books On Loan:</dt>
+
+
+
+                        @foreach (var book in Model.Loans)
+
+                        {
+
+
+
+                            <dd>@Html.ActionLink(book.Book.Name, "Details", "Books", new { id = book.Book.ISBN }, new { })</dd>
+                            <dd>Fine: £@book.FinePrice</dd>
+                            <dd>Checkout Date: @book.CheckOutDate</dd>
+                            <dd>Return Date: @book.ReturnDate</dd>
+
+
+
+                            <dd><br /></dd>
+                        }
+
+
+
+                    </dl>
+
+
+                }
+                else
+                {
+                    <p>This member has does not have any books checked out.</p>
+                }
+
+
+                <br />
+
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+<p class="panel panel-body">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MemberId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

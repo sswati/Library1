@@ -1,0 +1,21 @@
+﻿@model Library1.Models.Member
+
+@{
+    ViewBag.Title = "DeleteMember";
+}
+
+
+<div class="panel panel-body">
+
+    <h2 class="pull-left">
+        You cannot delete this member as they have a book out on loan
+    </h2>
+    <div class="pull-right">
+        <a href="@Url.Action("Index", "Home")">
+            <i class="fa fa-home large"></i>
+        </a>
+    </div>
+
+
+</div>
+

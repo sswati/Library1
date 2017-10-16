@@ -1,0 +1,276 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*Override design*/
+
+
+/*Override design*/
+
+.jumbotron {
+    /*color:#d41639;*/
+    color:#370e9f;
+    font-stretch:expanded;
+    background-color:rgba(255, 255, 255, 0.73);
+    font:800;
+    text-align:center;
+    height:40%;
+   font-family: 'Nunito Sans', sans-serif;
+
+
+}
+
+
+.modal-header{
+    background-color:#30b2c4;
+    color:orange;
+}
+h4{
+    font-size:25px;
+    font-weight:600;
+}
+h1{
+    font-weight:900;
+    
+    text-align:center;
+   font-size:50px;
+  color:#d41639;
+     /*font-family:''Droid Sans', sans-serif';*/
+       font-family: 'Nunito Sans', sans-serif;
+
+}
+
+/*Checkout pg*/
+
+.CheckoutSearch{
+    text-align:center;
+    color:navy;
+   font-size:18px;
+   
+   
+}
+
+.CheckoutForm {
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background:rgba(70, 130, 180, 0.20);
+   
+    border-radius: 8px;
+    font-family:'Ubuntu', sans-serif;
+        font-size:16px;
+        font-weight:800;
+}
+
+
+.panel {
+    background-color:rgba(255, 255, 255, 0.73);
+}
+
+.panel-heading{
+     font-family: 'Nunito Sans', sans-serif;
+       
+        font-weight:800;
+        text-align:center;
+}
+
+i.fa{
+    font-size:25px;
+}
+
+.page-header{
+    color:#d41639;
+     font-family: 'Nunito Sans', sans-serif;
+    font-weight:100;
+}
+
+div.container.panel-default > .panel-heading{
+      font-family: 'Nunito Sans', sans-serif;
+        font-size:16px;
+        font-weight:800;
+        text-align:center;
+}
+
+.panel-default{
+    text-align:center;
+    
+}
+
+/*div.panel-body{
+     padding-left:170px;
+
+}*/
+.font-control{
+    border-radius:5px;
+ 
+}
+
+body {
+    /*background-color: rgb(186, 179, 179);#30b2c4;*/
+    background-color:#147d8b;
+    padding-top: 0px;
+
+    
+  /*  background-image: url('../Images/background2.jpg');*/
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #1f1e1e;
+}
+
+body.h1{
+
+    color:#b40707;
+}
+
+body.h2{
+
+    color:#b40707;
+}
+
+.alert alert-success{
+    text-align:center;
+    font-size:70px;
+}
+
+.modal-dialog{
+    width:60%;
+    height:50%
+
+}
+
+.modal-content{
+    background-color:rgb(221, 221, 221)
+}
+
+div.modal-header{
+    color:#05055a;
+   font-family: 'Nunito Sans', sans-serif;
+   text-align:center;
+   font-size:40px;
+
+
+}
+/*Search result for loan boook*/
+
+.searchresult{
+
+    font-family: 'Cabin', sans-serif;
+        font-size:14px;
+        font-weight:600;
+        text-align:center;
+
+}
+
+.label-warning{
+    background-color:red;
+    color:black;
+}
+
+/*Book/Index*/
+thead.indexb{
+    font-size:x-large;
+    color:#b40707;
+    font-weight:700;
+    text-decoration-line:underline;
+   font-family: 'Cabin', sans-serif;
+   text-align:center;
+}
+
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+
+} 
+
+tr:hover {
+    background-color: lightblue;
+
+} 
+
+.imagepadding{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+
+/*Book/Detail*/
+#delete{
+
+    text-align:center;
+    font-family: 'Cabin', sans-serif;
+ 
+}
+
+
+/*.img.carousel{
+
+    width:60%;
+    height:80%;
+    
+    margin-left:20%;
+   
+   margin-bottom:50%;
+   
+    border:4px solid red;
+    /*align-content:center;
+   position:center;
+}
+*/
+
+.carousel{
+
+    width:60%;
+    height:90%;
+    
+    /*margin-left:10%;*/
+
+   margin-right:50%;
+   
+    
+    border:3px solid red;
+    
+}
+#slider {
+    padding-bottom: 0px;
+    color: transparent;
+    padding-top: 40px;
+    padding-left: 300px;
+    /*padding-right: 200px;*/
+}
+
+/*.table{
+    text-align:center;
+}
+
+.th{
+    text-align:center;
+}*/
+
+.deletefont{
+    color:red;
+}

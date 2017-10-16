@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Library1.Models.Loan>
+
+
+
+
+    <div id="searchresult">
+        <div id="searchFailed">
+            @using (Html.BeginForm("LoanSearchResults", "BookReturn", FormMethod.Post))
+            {
+
+
+                foreach (var item in Model)
+                {
+                    <div class="text-center">
+                        <br />
+                        <p>Member Name: @item.Member.Name</p>
+                        <p>Book Title: @item.Book.Name</p>
+                        <p>Book Author: @item.Book.Author</p>
+                        <p>Checkout Date: @item.CheckOutDate</p>
+                        <p>Return Date: @item.ReturnDate</p>
+                        <br />
+
+
+                        @{decimal i = 0.00M;}
+
+                        @if (item.FinePrice > i)
+                    {
+                            <p> Please ask @item.Member.Name to pay the following fine for the @item.Book.Name book:</p>
+                            <P class="label-warning">£@item.FinePrice</P>
+                        }
+                        else
+                        {
+                            <p class="label-info">No fine to pay</p>
+                        }
+
+
+                    </div>
+
+
+                    <br />
+
+
+                    <div class="col-md-12">
+
+                        @Html.ActionLink("Return Book", "Return", "RBooks", new { id = item.LoanId }, new { @class = "btn btn-primary" })
+
+                        <br />
+
+                    </div>
+
+
+
+
+                                }
+
+                            }
+
+
+        </div>
+    </div>
+
+    @section scripts{
+
+
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/Scripts/App/Book.js"></script>
+
+        <script src="~/Scripts/App/searchFailed.js"></script>
+    }
